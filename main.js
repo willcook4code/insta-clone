@@ -37,18 +37,32 @@ $('form').submit(function(e) {
     	error: onPostError,
         complete: onPostComplete
     });
+    $('#container').html('');
+    $.ajax(getSettings);
 });
 
-
+//get event to display entries~~~~~~~~~~
 var getSettings = {
 	url: collectionUrl,
 	type: 'get',
 	dataType: 'json',
 	success: function(data) {
-		return data;
+        var container = $('#container');
+		console.log(data);
+        data.forEach(function (val) {
+            var outerBox = $('<div class="outerBox"></div>');
+            var imageBox = $('<img>', {'src': val.image});
+            var descriptionBox = $('<div id="description"></div>').html(val.description);
+
+            outerBox.append(imageBox);
+            outerBox.append(descriptionBox);
+
+            container.append(outerBox);
+        });
+
 	},
 	error: function(err) {
-		console.log(err);
+		console.log("Get run bad.");
 	}
 }
 $.ajax(getSettings);
