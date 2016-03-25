@@ -3,12 +3,17 @@ var collectionUrl = 'http://small-tiyfe.herokuapp.com/collections/willsinsta'
 //assigned variables from html~~~~~~~~~~~
 var pic = $('.imgUrl');
 var caption = $('.imgCaption');
-var entries = [];
-//push object into entries array~~~~~~~~~
-// function collectEntries(entryObject) {
-// 	entries.push(entryObject);
-// }
+var noUrl = $('#imgErr');
+var noCap = $('#capErr');
 //onPost functions~~~~~~~~~~~~~~~~~~~~~~~
+// function error() {
+//     if (pic.val().indexOf('png') === -1) {
+//         noUrl.html('URL must begin with "http://" or "https://" and end with ".png", ".jpg", or ".gif"');
+//         return
+//     } else {
+//         noUrl.html('');
+//     }
+// }
 function onPostSuccess(data) {
     console.log('I run good.')
 }
@@ -18,14 +23,29 @@ function onPostError(err) {
 function onPostComplete() {
     console.log('I run.');
 }
-//on event to send entry~~~~~~~~~~~~~~~
+//if errors function~~~~~~~~~~~~~~~~~~~~~
+// function error() {
+//      else {
+//         noUrl.html('');
+//     }
+// }
+//on event to send entry~~~~~~~~~~~~~~~~~
 $('form').submit(function(e) {
     e.preventDefault();
     //build entry object
-    var entry = {
+    var entry;
+    if (pic.val().indexOf('jpg') === -1) {
+        noUrl.html('URL must begin with "http://" or "https://" and end with ".png", ".jpg", or ".gif"');
+        return
+    } else {
+        noUrl.html('');
+    }
+    entry = {
         image: pic.val(),
         description: caption.val()
     }
+    $('.imgUrl').val('');
+    $('.imgCaption').val('');
     console.log(entry);
     //post settings
     $.ajax({
@@ -39,6 +59,7 @@ $('form').submit(function(e) {
     });
     $('#container').html('');
     $.ajax(getSettings);
+
 });
 
 //get event to display entries~~~~~~~~~~
