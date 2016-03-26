@@ -3,18 +3,30 @@
 <head>
 	<title>My Insta</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
 <header>
-	<div></div>
+	<div class="topbar">
+		<span type="button" class="plus"><i class="fa fa-plus-circle"></i></span>
+	</div>
 	<form>
-		<input type="text" placeholder="Image URL" class="imgUrl">
-		<p id="imgErr"></p>
-		<input type="text" placeholder="Image Caption" class="imgCaption">
-		<p id="capErr"></p>
-		<button type="button" id="stop">CANCEL</button>
-		<button type="submit" id="enter">ADD IMAGE</button>
+		<div class="inputs">
+			<input type="text" placeholder="Image URL" class="fields" id="imgUrl">
+			<p id="imgErr"></p>
+			<textarea type="text" placeholder="Image Caption" class="fields" id="imgCaption"></textarea>
+			<p id="capErr"></p>
+		</div>
+		<span>
+			<button type="submit" id="enter">
+				<i class="fa fa-picture-o fa-2x"></i>
+				ADD IMAGE
+			</button>
+		</span>
+		<span>
+			<button type="button" id="stop">CANCEL</button>
+		</span>
 	</form>
 </header>
 <section id="container">

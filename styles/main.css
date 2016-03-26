@@ -1,8 +1,70 @@
 body {
   background-color: #EDEEEF; }
+  body .topbar {
+    background: #416894;
+    padding: .5em; }
+    body .topbar .plus {
+      margin-left: 2em; }
+      body .topbar .plus i {
+        background: #416894;
+        font-size: 2em; }
+  body form {
+    background-color: white;
+    padding: 2em 0 5em 0; }
+    body form .inputs {
+      margin: 0 10%; }
+      body form .inputs .fields {
+        width: 95%;
+        margin-bottom: 1em;
+        padding: .5em;
+        border: 2px solid #C4C4C4; }
+      body form .inputs p {
+        margin: 0;
+        color: red;
+        font-size: .8em;
+        font-weight: lighter; }
+    body form span :hover {
+      border: 2px outset; }
+    body form button {
+      color: white;
+      font-weight: lighter;
+      vertical-align: middle;
+      width: 39%;
+      margin: 0 auto;
+      display: block;
+      float: right;
+      border-radius: .2em;
+      margin: 0 10.2%;
+      border: none;
+      border-radius: .4em; }
+    body form #enter {
+      background-color: #17AA56;
+      padding: .8em 0;
+      margin-left: 0; }
+      body form #enter i {
+        border: none;
+        margin-right: .2em;
+        vertical-align: middle; }
+    body form #stop {
+      padding: 1.25em 0;
+      margin-right: .5em;
+      margin-left: 10.2%;
+      margin-left: 0; }
   body #container {
-    margin: 0 15%;
-    height: 1em;
     background-color: #E0E1E2; }
+    body #container .outerBox {
+      margin: 0 10%;
+      background-color: white;
+      margin-bottom: 3em;
+      border: 1px solid #C4C4C4;
+      border-radius: 0.2em;
+      box-shadow: 2px 2px 4px 1px rgba(183, 183, 183, 0.2); }
+      body #container .outerBox img {
+        width: 100%; }
+      body #container .outerBox #description {
+        padding: 1.5em 1em;
+        font-weight: lighter;
+        color: #7C7379;
+        font-size: 1.2em; }
 
 /*# sourceMappingURL=main.css.map */
