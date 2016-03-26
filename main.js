@@ -34,11 +34,20 @@ $('form').submit(function(e) {
     e.preventDefault();
     //build entry object
     var entry;
-    if (pic.val().indexOf('jpg') === -1) {
-        noUrl.html('URL must begin with "http://" or "https://" and end with ".png", ".jpg", or ".gif"');
-        return
+    if ((pic.val().indexOf('http://') === -1) && (pic.val().indexOf('https://') === -1)) {
+        noUrl.html('URL must begin with "http://" or "https://"');
+        return;
+    } else if ((pic.val().indexOf('jpg') === -1) && (pic.val().indexOf('png') === -1) && (pic.val().indexOf('gif') === -1)) {
+        noUrl.html('URL must end with ".png", ".jpg", or ".gif"');
+        return;
     } else {
         noUrl.html('');
+    }
+    if (caption.val() === '') {
+        noCap.html('You must enter a caption.');
+        return;
+    } else {
+        noCap.html('');
     }
     entry = {
         image: pic.val(),
@@ -59,7 +68,6 @@ $('form').submit(function(e) {
     });
     $('#container').html('');
     $.ajax(getSettings);
-
 });
 
 //get event to display entries~~~~~~~~~~
