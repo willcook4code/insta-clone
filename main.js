@@ -135,10 +135,7 @@ $('#logIn').click(function(){
         dataType: 'json',
         success: function(data) {
             data.forEach(function(val, i) {
-                if ((val.user !== userName) && (val.password !== pw)){
-                    alert('Your login information could not be verified.');
-                    return;
-                }
+                if ((val.user === userName) && (val.password === pw)){
                     $('#container').html('');
                     $.ajax(getSettings);
                     $('form').submit(function(e) {
@@ -189,7 +186,7 @@ $('#logIn').click(function(){
                         $('form').slideToggle();
                     });
                   
-                
+                }
             });
 
         },
