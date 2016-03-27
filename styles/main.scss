@@ -38,12 +38,12 @@ body {
 			color: white;
 		    font-weight: lighter;
 		    vertical-align: middle;
-		    width: 39%;
+		    width: 9em;
 		    margin: 0 auto;
 		    display: block;
 		    float: right;
 		    border-radius: .2em;
-		    margin: 0 10.2%;
+		    margin: 0 11%;
 		    border: none;
 		    border-radius: .4em;
 		}
@@ -83,5 +83,18 @@ body {
 				font-size: 1.2em;
 			}
 		}
+	}
+}
+
+@media (min-width: 596px) {
+	#container {
+		width: 37.125em;
+		margin: 0 auto;
+	}
+}
+@media (min-width: 855px) {
+	#container {
+		width: 53em;
+		margin: 0 auto;
 	}
 }
