@@ -64,6 +64,7 @@ function register() {
         };
     }   
     $.ajax(postUser);
+    $('form').show();
     $('#container').html('');
     $.ajax(getSettings);
     $('form').submit(function(e) {
@@ -219,7 +220,6 @@ $('#logIn').click(function(){
     };
     $.ajax(getUser);
 });
-
 //on event to send entry~~~~~~~~~~~~~~~~~
 // $('form').submit(function(e) {
 //     e.preventDefault();
